@@ -1,109 +1,345 @@
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<!-- Mirrored from www.capitalixoffshore.com/user 2/welcome.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Sep 2020 01:03:34 GMT -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
-<link rel="shortcut icon" href="../../capita">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Mission Federal Credit Union</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <style>
+    :root {
+      --bg: #0a0f1a;
+      --surface: #111827;
+      --surface-alt: #1f2937;
+      --text: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border: #374151;
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+    }
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Mission-fed-cu |  Welcome</title>
-<link href="layout.css" rel="stylesheet" type="text/css">
-<link href="styles.css" rel="stylesheet" type="text/css"></head><body><br>
-<div id="container">
-  <div id="top"></div>
-  <div id="content">
-    <div id="leftBar">
-      <div id="photo"><img src="card.jpg" width="179" height="184" /></div>
-      <table border="0" cellpadding="0" cellspacing="0" width="180">
-        <tbody><tr>
-          <th align="left" height="20" scope="col">Account Details</th>
-        </tr>
-        <tr>
-          <td align="left" height="20"><a href="#">Account Details</a></td>
-        </tr>
-        <tr>
-          <td align="left" height="20"><a href="statements.html">Account Statement</a></td>
-        </tr>
-        <tr>
-          <td align="left" height="20"><a href="transfer.html">Transfer</a></td>
-        </tr>
-      </tbody></table>
-    </div>
-    <div id="rightBar">
-      <h2></h2>
-      <br>
-      <div id="menu">
-    <ul>
-      <li class="selected"><a href="welcome.html">Home</a></li>
-      <li class="selected"><a href="summary.html">Summary</a></li>
-      <li><a href="statements.html">Statements</a></li>
-      <li><a href="transfer.html">Transfer</a></li>
-    </ul>
-  </div><br>
-  <h3>Welcome: BOWEN DEXTER HELMER </h3>
-  <p>You have logged in from IP: 
-        43.45.90.180<br>
-  </p>
-  <p>&nbsp;</p>
-  <table style="BORDER-COLLAPSE: collapse" border="0" cellpadding="0" cellspacing="0" width="300">
-    <tbody>
-      <tr>
-        <th scope="col">Account Updates</th>
-        <th width="100" scope="col">&nbsp;</th>
-      </tr>
-      <tr>
-        <td>Account Beneficiary</td>
-        <td width="100"></td>
-      </tr>
-      <tr>
-        <td>Account Number </td>
-        <td width="100">50182999046</td>
-      </tr>
-      <tr>
-        <td>Country</td>
-        <td width="100">United States </td>
-      </tr>
-      <tr>
-        <td>Swift Code </td>
-        <td width="100">SCBLGB2L</td>
-      </tr>
-      <tr>
-        <td>Previous Balance</td>
-        <td>$2,766,215.04 </td>
-      </tr>
-      <tr>
-        <td>Available Balance</td>
-        <td>$3,156,765.55 </td>
-      </tr>
-    </tbody>
-  </table>
-  <p>&nbsp;</p>
-  <h3>Account Balance:
-    
-    USD $3,156,765.55 </h3>
-    </div>
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-alt: #f1f5f9;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 240px) 1fr;
+      grid-template-rows: auto 1fr;
+      min-height: 100vh;
+    }
+
+    header {
+      grid-column: 1 / -1;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .theme-toggle:hover {
+      color: var(--text);
+      background: var(--surface-alt);
+    }
+
+    aside {
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--primary);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      margin-bottom: 1.5rem;
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    aside nav ul {
+      list-style: none;
+      width: 100%;
+    }
+
+    aside nav a {
+      display: block;
+      padding: 0.85rem 1rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    aside nav a:hover,
+    aside nav a.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    main {
+      padding: 2rem 1.5rem;
+      background: var(--bg);
+    }
+
+    .greeting {
+      margin-bottom: 2rem;
+    }
+
+    .greeting h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .greeting p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+
+    .balance {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--success);
+      margin: 0.75rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .balance-row td {
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .security-notice {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .security-notice strong {
+      color: var(--warning);
+    }
+
+    .footer {
+      grid-column: 1 / -1;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 992px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      aside {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      .profile {
+        width: 90px;
+        height: 90px;
+        margin: 0 1.5rem 0 0;
+      }
+      aside nav {
+        flex: 1;
+      }
+      main {
+        padding: 1.5rem 1rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .greeting h1 {
+        font-size: 1.5rem;
+      }
+      .balance {
+        font-size: 2rem;
+      }
+      table {
+        font-size: 0.95rem;
+      }
+      th, td {
+        padding: 0.75rem;
+      }
+      .profile {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="layout">
+    <header>
+      <div class="logo">Mission FCU</div>
+      <button class="theme-toggle" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'">☀️/🌙</button>
+    </header>
+
+    <aside>
+      <div class="profile">
+        <img src="card.jpg" alt="User Profile - Abimbola" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Overview</a></li>
+          <li><a href="statements.html">Statements</a></li>
+          <li><a href="transfer.html">Transfers</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="greeting">
+        <h1>Welcome back, Bowen Dexter Helmer</h1>
+        <p>Last login from IP: 43.45.90.180</p>
+      </section>
+
+      <div class="card">
+        <h2>Account Overview</h2>
+        <p class="balance">USD $3,156,765.55</p>
+        <p style="color: var(--text-muted); margin-top: -0.5rem;">Available Balance</p>
+
+        <table>
+          <tr><th>Account Number</th><td>50182999046</td></tr>
+          <tr><th>Beneficiary</th><td></td></tr>
+          <tr><th>Country</th><td>United States</td></tr>
+          <tr><th>SWIFT Code</th><td>SCBLGB2L</td></tr>
+          <tr class="balance-row"><th>Previous Balance</th><td>$2,766,215.04</td></tr>
+          <tr class="balance-row"><th>Available Balance</th><td style="color: var(--success);">$3,156,765.55</td></tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Quick Actions</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
+          <a href="summary.html" style="padding: 0.9rem 1.6rem; background: var(--primary); color: white; border-radius: 8px; text-decoration: none; font-weight: 500;">View Summary</a>
+          <a href="statements.html" style="padding: 0.9rem 1.6rem; background: var(--surface-alt); color: var(--text); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; font-weight: 500;">Statements</a>
+          <a href="transfer.html" style="padding: 0.9rem 1.6rem; background: var(--surface-alt); color: var(--text); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; font-weight: 500;">Transfer Funds</a>
+        </div>
+      </div>
+
+      <div class="security-notice">
+        <p><strong>Security Reminder:</strong> We will never request your login credentials, PIN, or full account details via email or unsolicited messages.</p>
+        <p>If you receive suspicious communications, contact your Account Manager directly at <a href="mailto:Customer.Mission-fed-cu@gmail.com">Customer.Mission-fed-cu@gmail.com</a>.</p>
+        <p><a href="#">Change Password</a> • Always use strong, unique passwords and enable two-factor authentication when available.</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>© Mission Federal Credit Union • Secure Online Banking • <a href="#">Privacy Policy</a> • <a href="#">Contact Support</a></p>
+    </footer>
   </div>
-  <div id="footer">
-    <div id="holder">
-      <p></p>
-      <p><strong>Account Manager</strong><br>
-        Customer.Mission-fed-cu@gmail.com</p>
-      <p>Your Password <img border="0" src="bImages/lckblk.gif" width="10" height="12"></p>
-      <p>Always keep your password safe</p>
-      <p><a href="#">Change your Password</a></p>
-    </div>
-    <div id="alert">
-      <p>This is<strong> Mission-fed-cu</strong><strong> </strong>Online Banking System, we have taken every steps to ensure your security. <br />
-Always Remember that for security reason(s):</p>
-      <p>1. We will never ask for your Account Login Details and or PIN through email.<br />
-        2. Should you receive any email asking for your personal information please ignore it. </p>
-      <p>For assistance or technical problems regarding your accounts, <br />
-        please contact your account officer from: <a href="mailto:acnline.com" >Customer.Mission-fed-cu@gmail.com</a></p>
-    </div>
-  </div>
-</div>
+
 </body>
-<!-- Mirrored from www.capitalixoffshore.com/user 2/welcome.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Sep 2020 01:03:47 GMT -->
-
 </html>
