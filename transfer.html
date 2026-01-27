@@ -315,27 +315,8 @@
   </div><br>
   <h3>Transfer Funds: </h3>
   <p>Transfer Funds to another Account or Bank:</p>
-  <p><SCRIPT>
-function passWord() {
-var testV = 1;
-var pass1 = prompt('Please Enter Transfer Code, if you dont have one,contact acct.onepointcu@gmail.com',' ');
-while (testV < 3) {
-if (!pass1)
-history.go(-1);
-if (pass1.toLowerCase() == "789564337") {
-alert('Valid Authorization Code!');
-window.open('processing.html');
-break;
-}
-testV+=1;
-var pass1 =
-prompt('contact@acctonepoint@yahoo.com.com for authorization code','Password');
-}
-if (pass1.toLowerCase()!="password" & testV ==3)
-history.go(-1);
-return " ";
-}
-</SCRIPT>
+  <p>
+
 <CENTER>
   <form>
     <p>
@@ -369,7 +350,11 @@ return " ";
       </label>
     </p>
     <p>
-      <input name="button" type="button" onclick="passWord()" value="Transfer" />
+      <input
+  type="button"
+  value="Transfer"
+  onclick="window.location.href='processing.html';"
+/>
     </p>
   </form>
 </CENTER></p>
