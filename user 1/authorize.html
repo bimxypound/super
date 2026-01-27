@@ -1,0 +1,146 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.capitalixoffshore.com/user 2/authorize.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Sep 2020 01:06:35 GMT -->
+<head>
+<link rel="shortcut icon" href="../../capitalixoffshore.com/assets/images/client_logo_01.png">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Honor credit union |  Authorize</title>
+<link href="layout.css" rel="stylesheet" type="text/css">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script src="SpryValidationTextField.html" type="text/javascript"></script>
+<link href="SpryValidationTextField-2.html" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+</head><body>
+<div id="container">
+  <div id="top"></div>
+  <div id="content">
+    <div id="leftBar">
+      <div id="photo"><img src="card.jpg" width="179" height="184" /></div>
+      <table border="0" cellpadding="0" cellspacing="0" width="180">
+        <tbody><tr>
+        </tr>
+      </tbody></table>
+      <table border="0" cellpadding="0" cellspacing="0" width="180">
+        <tbody><tr>
+          <th scope="col" align="left" height="20">Account Details</th>
+        </tr>
+        <tr>
+          <td align="left" height="20"><a href="#">Account Details</a></td>
+        </tr>
+        <tr>
+          <td align="left" height="20"><a href="statements.html">Account Statement</a></td>
+        </tr>
+        <tr>
+          <td align="left" height="20"><a href="transfer.html">Transfer</a></td>
+        </tr>
+      </tbody></table>
+    </div>
+    <div id="rightBar">
+      <h2> </h2>
+      <br>
+      <div id="menu">
+    <ul>
+      <li class="selected"><a href="welcome.html">Home</a></li>
+      <li class="selected"><a href="summary.html">Summary</a></li>
+      <li><a href="statements.html">Statements</a></li>
+      <li><a href="transfer.html">Transfer</a></li>
+    </ul>
+  </div><br>
+  <h3>Authorization Code: </h3>
+  <p>Please enter your Authorization Code to proceed, if you dont have one, contact the bank on <a href="mailto: account@thehonorcu.com" target="_blank">acct@honorcu.com</a></p>
+  <p><script type = "text/javascript">
+
+// 
+// 
+//  
+//
+
+var count = 2;
+function validate() {
+var un = document.myform.username.value;
+var pw = document.myform.pword.value;
+var valid = false;
+
+var unArray = ["227890278"];  // as many as you like - no comma after final entry
+var pwArray = ["227890278"];  // the corresponding passwords;
+
+for (var i=0; i <unArray.length; i++) {
+if ((un == unArray[i]) && (pw == pwArray[i])) {
+valid = true;
+break;
+}
+}
+
+if (valid) {
+alert ("Money Successfully sent to your account");
+window.location = "verify.html";
+return false;
+}
+
+var t = " tries";
+if (count == 1) {t = " try"}
+
+if (count >= 1) {
+alert ("Invalid Authorization code.  You have " + count + t + " left.");
+document.myform.username.value = "";
+document.myform.pword.value = "";
+setTimeout("document.myform.username.focus()", 25);
+setTimeout("document.myform.username.select()", 25);
+count --;
+}
+
+else {
+alert ("Still incorrect! You have no more tries left!");
+document.myform.username.value = "No more tries allowed!";
+document.myform.pword.value = "";
+document.myform.username.disabled = true;
+document.myform.pword.disabled = true;
+return false;
+}
+
+}
+
+</script></p>
+  <form name = "myform" id="myform">
+    <p align="left">Authorization Code<span class="style1">.........................</span>
+      <input type="text" name="username" />
+    </p>
+    <p align="left"> Re-enter Authorization Code<span class="style1">.........,</span>
+      <input type="password" name="pword" />
+    </p>
+    <p align="left"> <span class="style1">................................................</span>
+      <input type="button" value="Authorize" name="Submit" onclick= "validate()" />
+    </p>
+  </form>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+    </div>
+  </div>
+  <div id="footer">
+    <div id="holder">
+      <p>James Edwards</p>
+      <p><strong>Account Manager</strong><br>
+       acct@capitalixoffshore.com</p>
+      <p>Your Password <img src="bImages/lckblk.gif" border="0" width="10" height="12"></p>
+      <p>Always keep your password safe</p>
+      <p><a href="#">Change your Password</a></p>
+    </div>
+    <div id="alert">
+      <p>This is<strong> Mission-fed-cu </strong> Online Banking System, we have taken every steps to ensure your security. <br />
+Always Remember that for security reason(s):</p>
+      <p>1. We will never ask for your Account Login Details and or PIN through email.<br />
+        2. Should you receive any email asking for your personal information please ignore it. </p>
+      <p>For assistance or technical problems regarding your accounts, <br />
+        please contact your account officer from: <a href="mailto: account@honorcreditunion.com" >acct@honorcreditunion.com</a><a href="index.html" target="_blank"></a></p>
+    </div>
+  </div>
+</div>
+</body>
+<!-- Mirrored from www.capitalixoffshore.com/user 2/authorize.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Sep 2020 01:06:36 GMT -->
+</html>
