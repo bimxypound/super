@@ -223,6 +223,10 @@
 </div>
 
 <script>
+  console.log("PATH:", window.location.pathname);
+</script>
+
+<script>
   const inputs = document.querySelectorAll('.otp-input');
   const form = document.getElementById('otpForm');
   const errorMsg = document.getElementById('errorMsg');
@@ -283,7 +287,8 @@
       
       // In real app → window.location = "/dashboard" or next page
       setTimeout(() => {
-         window.location.href = "/verify.html";
+         window.location.href = "./verify.html";
+
       }, 1200);
     } else {
       errorMsg.textContent = 'Incorrect code. Please try again.';
