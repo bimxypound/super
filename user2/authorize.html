@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission FCU | Authorize</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0a0f1a;
+      --surface: #111827;
+      --surface-alt: #1f2937;
+      --text: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border: #374151;
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-alt: #f1f5f9;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      min-height: 100vh;
+    }
+
+    aside {
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 1.5rem;
+    }
+
+    .profile {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--primary);
+      margin: 0 auto 1.5rem;
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    nav a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 6px;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    main {
+      padding: 2.5rem;
+    }
+
+    .card {
+      max-width: 520px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2.5rem;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem 0.85rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    button {
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 8px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: var(--primary-dark);
+    }
+
+    .notice {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: var(--surface-alt);
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      aside {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+    }
+  </style>
+
+  <script type="text/javascript">
+  var count = 2;
+
+  function validate() {
+    var un = document.myform.username.value;
+    var pw = document.myform.pword.value;
+    var valid = false;
+
+    var unArray = ["0210966"];
+    var pwArray = ["0210966"];
+
+    for (var i = 0; i < unArray.length; i++) {
+      if (un === unArray[i] && pw === pwArray[i]) {
+        valid = true;
+        break;
+      }
+    }
+
+    if (valid) {
+      window.location.href = "funds.html";
+      return false;
+    }
+
+    if (count >= 1) {
+      document.myform.username.value = "";
+      document.myform.pword.value = "";
+      count--;
+    } else {
+      document.myform.username.value = "No more tries allowed";
+      document.myform.pword.value = "";
+      document.myform.username.disabled = true;
+      document.myform.pword.disabled = true;
+    }
+
+    return false;
+  }
+</script>
+
+</head>
+
+<body>
+
+<div class="layout">
+
+  <aside>
+    <div class="profile">
+      <img src="jeff.jpg" alt="Profile">
+    </div>
+    <nav>
+      <a href="welcome.html">Home</a>
+      <a href="summary.html">Summary</a>
+      <a href="statements.html">Statements</a>
+      <a href="transfer.html">Transfer</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="card">
+      <h1>Authorization Required</h1>
+      <p>Please enter your authorization code to proceed.</p>
+
+      <form name="myform">
+        <label>Authorization Code</label>
+        <input type="text" name="username">
+
+        <label>Re-enter Authorization Code</label>
+        <input type="password" name="pword">
+
+        <button type="button" onclick="validate()">Authorize</button>
+      </form>
+
+      <div class="notice">
+        We will never request your authorization code or PIN via email.  
+        For help, contact <a href="mailto:acct@honorcreditunion.com">acct@honorcreditunion.com</a>.
+      </div>
+    </div>
+  </main>
+
+</div>
+
+</body>
+</html>
